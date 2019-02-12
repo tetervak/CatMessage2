@@ -10,6 +10,11 @@
     android:orientation="vertical"
     tools:context=".InputActivity">
 
+    <TextView
+        android:id="@+id/input_activity_label"
+        style="@style/activity_label"
+        android:text="@string/input_activity" />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,5 +81,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2" />
+
+    <TextView
+        android:id="@+id/sheridan"
+        android:text="@string/sheridan"
+        style="@style/sheridan_label" />
 
 </LinearLayout>

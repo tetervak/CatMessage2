@@ -9,4 +9,11 @@
     <string name="send">Send</string>
     <string name="cancel">Cancel</string>
     <string name="select_message">Select a message</string>
+
+    <!-- the activity labels -->
+    <string name="main_activity">Main Activity</string>
+    <string name="input_activity">Input Activity</string>
+
+    <!-- the floating label -->
+    <string name="sheridan">Sheridan, 2019</string>
 </resources>
