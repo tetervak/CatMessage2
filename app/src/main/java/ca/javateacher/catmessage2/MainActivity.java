@@ -3,8 +3,8 @@ package ca.javateacher.catmessage2;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
     getButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent intent = new Intent(MainActivity.this, InputActivity.class);
+        Intent intent =
+            new Intent(MainActivity.this, InputActivity.class);
         startActivityForResult(intent, GET_MESSAGE);
       }
     });
