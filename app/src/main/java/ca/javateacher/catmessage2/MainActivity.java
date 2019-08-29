@@ -3,6 +3,8 @@ package ca.javateacher.catmessage2;
 
 import android.app.Activity;
 import android.content.Intent;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   @Override
-  protected void onSaveInstanceState(Bundle outState) {
+  protected void onSaveInstanceState(@NonNull Bundle outState) {
     super.onSaveInstanceState(outState);
     outState.putString(MESSAGE,mMessageText);
   }
