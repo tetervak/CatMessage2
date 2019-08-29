@@ -6,7 +6,6 @@ import android.content.Intent;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -29,14 +28,7 @@ public class MainActivity extends AppCompatActivity {
     mMessageView = findViewById(R.id.message_text);
 
     Button getButton = findViewById(R.id.get_button);
-    getButton.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Intent intent =
-            new Intent(MainActivity.this, InputActivity.class);
-        startActivityForResult(intent, GET_MESSAGE);
-      }
-    });
+    getButton.setOnClickListener(v -> showInput());
 
     if(savedInstanceState != null){
       mMessageText = savedInstanceState.getString(MESSAGE);
@@ -44,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
     }else{
       mMessageText = getString(R.string.undefined);
     }
+  }
+
+  private void showInput(){
+    Intent intent =
+            new Intent(MainActivity.this, InputActivity.class);
+    startActivityForResult(intent, GET_MESSAGE);
   }
 
   @Override

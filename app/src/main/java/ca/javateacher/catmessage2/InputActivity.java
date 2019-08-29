@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
@@ -21,22 +20,16 @@ public class InputActivity extends AppCompatActivity {
 
     mMessageGroup = findViewById(R.id.message_group);
 
-    Button sendButton = findViewById(R.id.send_button);
-    sendButton.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        send();
-      }
-    });
-
     Button cancelButton = findViewById(R.id.cancel_button);
-    cancelButton.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        setResult(Activity.RESULT_CANCELED);
-        finish();
-      }
-    });
+    cancelButton.setOnClickListener(v -> cancel());
+
+    Button sendButton = findViewById(R.id.send_button);
+    sendButton.setOnClickListener(v -> send());
+  }
+
+  private void cancel(){
+    setResult(Activity.RESULT_CANCELED);
+    finish();
   }
 
   private void send(){

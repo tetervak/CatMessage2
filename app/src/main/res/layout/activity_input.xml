@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@color/Teal50"
-
+    android:theme="@style/InputTheme"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".InputActivity">
@@ -60,21 +58,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/gap2"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle">
 
         <Button
             android:id="@+id/cancel_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/cancel" />
+            android:text="@string/cancel"
+            style="?android:attr/buttonBarButtonStyle"/>
 
         <Button
             android:id="@+id/send_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/send"
             android:layout_marginStart="@dimen/gap1"
-            android:text="@string/send" />
+            style="?android:attr/buttonBarButtonStyle"/>
     </LinearLayout>
 
     <Space
