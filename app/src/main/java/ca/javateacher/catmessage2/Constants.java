@@ -3,7 +3,7 @@ package ca.javateacher.catmessage2;
 public class Constants {
 
     // used in save instance logic
-    public static final String IS_MESSAGE_RECEIVED_KEY = "urgent";
+    public static final String IS_MESSAGE_RECEIVED_KEY = "received";
 
     // used to pass data from InputActivity to MainActivity and to save the instance
     public static final String IS_URGENT_KEY = "urgent";
