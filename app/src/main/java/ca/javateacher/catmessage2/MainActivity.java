@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity {
     getButton.setOnClickListener(v -> showInput());
 
     if(savedInstanceState != null) {
-      Log.v("MainActivity","The saved instance is found");
       mIsMessageReceived = savedInstanceState.getBoolean(IS_MESSAGE_RECEIVED_KEY);
-      Log.v("MainActivity","mIsMessageReceived=" + mIsMessageReceived);
       if(mIsMessageReceived) {
         mUrgent = savedInstanceState.getBoolean(IS_URGENT_KEY);
         mIsUrgentView.setText(mUrgent ? R.string.urgent: R.string.not_urgent);
@@ -46,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         mMessageView.setText(mMessage);
       }
     }else{
-      Log.v("MainActivity","No saved instance is found");
       mIsMessageReceived = false;
     }
   }
@@ -60,14 +57,10 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onSaveInstanceState(@NonNull Bundle outState) {
     super.onSaveInstanceState(outState);
-    Log.v("MainActivity","Saving the instance state");
     outState.putBoolean(IS_MESSAGE_RECEIVED_KEY, mIsMessageReceived);
-    Log.v("MainActivity","mIsMessageReceived=" + mIsMessageReceived);
     if(mIsMessageReceived){
       outState.putBoolean(IS_URGENT_KEY, mUrgent);
-      Log.v("MainActivity","mUrgent=" + mUrgent);
       outState.putString(MESSAGE_TEXT_KEY, mMessage);
-      Log.v("MainActivity","mMessage=" + mMessage);
     }
   }
 
