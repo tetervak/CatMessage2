@@ -6,11 +6,14 @@ import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioGroup;
+
+import static ca.javateacher.catmessage2.Constants.*;
 
 public class InputActivity extends AppCompatActivity {
 
-  public static final String MESSAGE = "message";
+  private CheckBox mUrgentCheckBox;
   private RadioGroup mMessageGroup;
 
   @Override
@@ -18,11 +21,13 @@ public class InputActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_input);
 
+    // lookup the views
+    mUrgentCheckBox = findViewById(R.id.urgent_check_box);
     mMessageGroup = findViewById(R.id.message_group);
 
+    // make the buttons work
     Button cancelButton = findViewById(R.id.cancel_button);
     cancelButton.setOnClickListener(v -> cancel());
-
     Button sendButton = findViewById(R.id.send_button);
     sendButton.setOnClickListener(v -> send());
   }
@@ -33,7 +38,9 @@ public class InputActivity extends AppCompatActivity {
   }
 
   private void send(){
-    // get the selected message
+    // get urgent flag value
+    boolean urgent = mUrgentCheckBox.isChecked();
+    // get the selected message text
     String message;
     switch (mMessageGroup.getCheckedRadioButtonId()) {
       case R.id.purr_button:
@@ -48,9 +55,10 @@ public class InputActivity extends AppCompatActivity {
       default:
         message = getString(R.string.undefined);
     }
-    // return back with the message
+    // return back with the message data
     Intent intent = new Intent();
-    intent.putExtra(MESSAGE, message);
+    intent.putExtra(IS_URGENT_KEY, urgent);
+    intent.putExtra(MESSAGE_TEXT_KEY, message);
     setResult(Activity.RESULT_OK, intent);
     finish();
   }

@@ -25,6 +25,15 @@
         android:text="@string/select_message"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+    <CheckBox
+        android:id="@+id/urgent_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/gap0"
+        android:checked="true"
+        android:text="@string/urgent" />
+
     <RadioGroup
         android:id="@+id/message_group"
         android:layout_width="wrap_content"
