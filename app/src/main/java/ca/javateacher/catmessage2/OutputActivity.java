@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import static ca.javateacher.catmessage2.Constants.*;
 
-public class MainActivity extends AppCompatActivity {
+public class OutputActivity extends AppCompatActivity {
 
   private TextView mMessageView;
   private TextView mIsUrgentView;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_output);
 
     // lookup the views
     mMessageView = findViewById(R.id.message_text);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void showInput(){
     Intent intent =
-            new Intent(MainActivity.this, InputActivity.class);
+            new Intent(OutputActivity.this, InputActivity.class);
     startActivityForResult(intent, GET_MESSAGE_REQUEST);
   }
 
